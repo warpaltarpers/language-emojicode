@@ -1,0 +1,12 @@
+".source.emojicode":
+  editor:
+    increaseIndentPattern: '''
+      (?x)
+      	🍇
+      	
+    '''
+    decreaseIndentPattern: '''
+      (?x)
+      	🍉
+      	
+    '''

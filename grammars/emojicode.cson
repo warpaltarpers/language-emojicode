@@ -1,0 +1,434 @@
+fileTypes: [
+  "emojic"
+]
+firstLineMatch: "-\\*- Emojicode -\\*-"
+name: "Emojicode"
+patterns: [
+  {
+    include: "#comments"
+  }
+  {
+    include: "#classes"
+  }
+  {
+    captures:
+      "1":
+        name: "keyword.control.import.emojicode"
+      "2":
+        name: "variable.other.package-name.emojicode"
+      "3":
+        name: "storage.type.module.emojicode"
+    match: "^\\s*(📦)\\s*([^\\s]+)\\s*([^\\s])"
+  }
+  {
+    begin: "^\\s*(🏁)\\s*(?:➡️\\s*([^\\s]))?\\s*🍇"
+    beginCaptures:
+      "1":
+        name: "entity.name.function.main.emojicode"
+      "2":
+        name: "storage.type.method.emojicode"
+    end: "🍉"
+    name: "meta.function.main.emojicode"
+    patterns: [
+      {
+        include: "#comments"
+      }
+      {
+        include: "#literals"
+      }
+      {
+        include: "#variables"
+      }
+      {
+        include: "#builtin-types"
+      }
+      {
+        include: "#control-flow"
+      }
+    ]
+  }
+  {
+    match: "🍊|🍋|🍓|🔁|🔂|🍎"
+    name: "keyword.control.emojicode"
+  }
+]
+repository:
+  "builtin-types":
+    patterns: [
+      {
+        match: "🍬?([🍨🍯]\\s*🐚)?\\s*(🚂|🚀|👌|🔣|🔡|⏩|✨)"
+        name: "support.type.s.emojicode"
+      }
+    ]
+  classes:
+    patterns: [
+      {
+        begin: "(🐇\\s*([^🐖\\s])\\s*([^🐖\\s]?))[^🐖\\s]*🍇"
+        beginCaptures:
+          "1":
+            name: ""
+          "2":
+            name: "meta.toc-list.class.emojicode"
+          "3":
+            name: "entity.name.type.class.emojicode"
+          "4":
+            name: "storage.type.class.emojicode"
+        end: "🍉"
+        name: "meta.class.emojicode"
+        patterns: [
+          {
+            include: "#declarative-statements"
+          }
+          {
+            include: "#method-definitions"
+          }
+          {
+            include: "#initializer-definitions"
+          }
+        ]
+      }
+    ]
+  comments:
+    patterns: [
+      {
+        captures:
+          "1":
+            name: "meta.toc-list.separator.emojicode"
+          "2":
+            name: "meta.toc-list.emojicode"
+        comment: "Separator comment; appears as separator in symbol list, with optional text following"
+        match: "^\\s*(👴{3,})\\s*([^\\s].*)?$"
+        name: "meta.separator.emojicode"
+        while: "(?=im)possible"
+      }
+      {
+        captures:
+          "1":
+            name: "meta.toc-list.emojicode"
+        comment: "Section comment; text appears in symbol list"
+        match: "^\\s*👴{2,}\\s+([^\\s].*)$"
+        name: "comment.line.older-man.emojicode"
+      }
+      {
+        match: "👴.*$"
+        name: "comment.line.older-man.emojicode"
+      }
+      {
+        begin: "👵"
+        end: "👵"
+        name: "comment.block.older-woman.emojicode"
+      }
+      {
+        begin: "🌮"
+        comment: "I would import Markdown here, but it gets formatted funny if there's any indentation."
+        end: "🌮"
+        name: "comment.block.documentation.taco.emojicode"
+      }
+    ]
+  "control-flow":
+    patterns: [
+      {
+        begin: "(🍊)\\s*([^\\s].*)\\s*🍇"
+        beginCaptures:
+          "1":
+            name: "keyword.control.if.emojicode"
+          "2":
+            patterns: [
+              {
+                include: "#functional-statements"
+              }
+            ]
+        end: "🍉"
+        name: "meta.block.control.if.emojicode"
+        patterns: [
+          {
+            include: "#functional-statements"
+          }
+        ]
+      }
+      {
+        begin: "(🍋)\\s*([^\\s].*)\\s*🍇"
+        beginCaptures:
+          "1":
+            name: "keyword.control.elseif.emojicode"
+          "2":
+            patterns: [
+              {
+                include: "#functional-statements"
+              }
+            ]
+        end: "🍉"
+        name: "meta.block.control.elseif.emojicode"
+        patterns: [
+          {
+            include: "#functional-statements"
+          }
+        ]
+      }
+      {
+        begin: "(🍓)\\s*🍇"
+        beginCaptures:
+          "1":
+            name: "keyword.control.else.emojicode"
+        end: "🍉"
+        name: "meta.block.control.else.emojicode"
+        patterns: [
+          {
+            include: "#functional-statements"
+          }
+        ]
+      }
+      {
+        begin: "(🔁)\\s*([^\\s].*)\\s*🍇"
+        beginCaptures:
+          "1":
+            name: "keyword.control.while.emojicode"
+          "2":
+            patterns: [
+              {
+                include: "#functional-statements"
+              }
+            ]
+        end: "🍉"
+        name: "meta.block.control.while.emojicode"
+        patterns: [
+          {
+            include: "#functional-statements"
+          }
+        ]
+      }
+      {
+        begin: "(🔂)\\s*(\\b[^\\s]+\\b)\\s*(?:(\\b[^\\s]+\\b)|([^\\s].*))\\s*🍇"
+        beginCaptures:
+          "1":
+            name: "keyword.control.for.emojicode"
+          "2":
+            name: "variable.other.loop.emojicode"
+          "3":
+            name: "variable.other.loop.emojicode"
+          "4":
+            patterns: [
+              {
+                include: "#functional-statements"
+              }
+            ]
+        end: "🍉"
+        name: "meta.block.control.for.emojicode"
+        patterns: [
+          {
+            include: "#functional-statements"
+          }
+        ]
+      }
+      {
+        captures:
+          "1":
+            name: "keyword.control.return.emojicode"
+          "2":
+            name: "variable.other.emojicode"
+          "3":
+            patterns: [
+              {
+                include: "#functional-statements"
+              }
+            ]
+        match: "(🍎)\\s*(?:(\\b[^\\s]+\\b)|([^\\s].*))"
+      }
+    ]
+  "declarative-statements":
+    patterns: [
+      {
+        include: "#comments"
+      }
+      {
+        include: "#variable-declarations"
+      }
+      {
+        include: "#builtin-types"
+      }
+    ]
+  "functional-statements":
+    patterns: [
+      {
+        include: "#comments"
+      }
+      {
+        include: "#literals"
+      }
+      {
+        include: "#variables"
+      }
+      {
+        include: "#builtin-types"
+      }
+      {
+        include: "#operators"
+      }
+      {
+        include: "#control-flow"
+      }
+      {
+        include: "#method-calls"
+      }
+    ]
+  "initializer-definitions":
+    patterns: [
+      {
+        begin: "[\\s🔓🔐🔒✒️🔏🔑🍬]*🐈\\s*([^\\s]).*🍇"
+        beginCaptures:
+          "1":
+            name: "entity.name.function.initializer.emojicode"
+        end: "🍉"
+        name: "meta.function.initializer.emojicode"
+        patterns: [
+          {
+            include: "#functional-statements"
+          }
+        ]
+      }
+    ]
+  literals:
+    patterns: [
+      {
+        match: "\\b\\d[\\d_]*?(\\.\\d+)?\\b"
+        name: "constant.numeric.decimal.emojicode"
+      }
+      {
+        match: "\\b0x\\h+\\b"
+        name: "constant.numeric.hexadecimal.emojicode"
+      }
+      {
+        match: "🔟."
+        name: "constant.character.emojicode"
+      }
+      {
+        match: "👍"
+        name: "constant.language.true.emojicode"
+      }
+      {
+        match: "👎"
+        name: "constant.language.false.emojicode"
+      }
+      {
+        match: "⚡️"
+        name: "constant.language.nothingness.emojicode"
+      }
+      {
+        begin: "🔤"
+        end: "((?<!❌)|(?<=❌❌))🔤"
+        name: "string.other.emojicode"
+        patterns: [
+          {
+            match: "❌[❌🔤ntre]"
+            name: "constant.character.escape.emojicode"
+          }
+          {
+            match: "❌."
+            name: "invalid.illegal.unknown-escape.emojicode"
+          }
+        ]
+      }
+    ]
+  "method-calls":
+    patterns: [
+      {
+        captures:
+          "1":
+            name: "support.function.method.emojicode"
+          "2":
+            name: "variable.other.emojicode"
+          "3":
+            patterns: [
+              {
+                include: "#functional-statements"
+              }
+            ]
+        match: "([^\\s\\w])\\s*(?:(\\b[^\\s]+\\b)|([^\\s].*))"
+        name: "meta.function-call.method.emojicode"
+      }
+    ]
+  "method-definitions":
+    patterns: [
+      {
+        begin: "^[\\s🐇🔓🔐🔒✒️🔏]*🐖\\s*([^\\s])(.*?)(?:➡️\\s*([^\\s]))?\\s*🍇"
+        beginCaptures:
+          "1":
+            name: "entity.name.function.method.emojicode"
+          "2":
+            patterns: [
+              {
+                include: "#builtin-types"
+              }
+            ]
+          "3":
+            patterns: [
+              {
+                include: "#builtin-types"
+              }
+            ]
+        end: "🍉"
+        name: "meta.function.method.emojicode"
+        patterns: [
+          {
+            include: "#functional-statements"
+          }
+        ]
+      }
+      {
+        captures:
+          "1":
+            name: "entity.name.function.method.native.emojicode"
+          "3":
+            name: "storage.type.emojicode"
+        match: "^[\\s🐇🔓🔐🔒✒️🔏]*🐖\\s*([^\\s]).*?(?:➡️\\s*[^\\s])?\\s*📻"
+        name: "meta.function.method.native.emojicode"
+      }
+    ]
+  operators:
+    patterns: [
+      {
+        match: "😜|◀️|▶️|⬅️|➡️|➕|➖|✖️|➗|🚮|🎊|🎉|❎|⭕️|💢|❌|🚫|👈|👉"
+        name: "keyword.operator.emojicode"
+      }
+    ]
+  "variable-declarations":
+    patterns: [
+      {
+        captures:
+          "1":
+            name: "keyword.other.variable-declare.emojicode"
+          "2":
+            name: "meta.toc-list.variable.emojicode"
+          "3":
+            name: "variable.other.class.emojicode"
+        match: "(🍰)\\s*(([^\\s]+)\\s*(🍬\\s*.|[🍨🍯]\\s*🐚\\s*.|.))"
+      }
+    ]
+  variables:
+    patterns: [
+      {
+        captures:
+          "1":
+            name: "keyword.other.variable-declare.emojicode"
+          "2":
+            name: "variable.other.emojicode"
+        match: "(🍰)\\s*([^\\s]+)\\s*?(?=[^\\s])"
+      }
+      {
+        captures:
+          "1":
+            name: "keyword.other.variable-assign.emojicode"
+          "2":
+            name: "variable.other.emojicode"
+        match: "(🍮)\\s*((\\w)+)\\s*?(?=[^\\s])"
+      }
+      {
+        captures:
+          "1":
+            name: "keyword.other.variable-freeze.emojicode"
+          "2":
+            name: "variable.other.emojicode"
+        match: "(🍦)\\s*((\\w)+)\\s*?(?=[^\\s])"
+      }
+    ]
+scopeName: "source.emojicode"

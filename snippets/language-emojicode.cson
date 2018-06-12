@@ -1,0 +1,115 @@
+".source.emojicode":
+  "Access Modifier":
+    prefix: "access"
+    body: "${1|🖋,🔏,🔒,🔐,🔓|}"
+  "Block Comment":
+    prefix: "/*"
+    body: '''
+      👵
+      	$0
+      👵
+    '''
+  "Built-In Type":
+    prefix: "type"
+    body: "${1|🚂,🚀,🔣,🔡,⏩,🍨🐚,🍯🐚|}"
+  "Chequered Flag Function":
+    prefix: "main"
+    body: '''
+      🏁 ➡️ 🚂 🍇
+      	$0
+      	
+      	🍎 0
+      🍉
+    '''
+  "Class Definition":
+    prefix: "class"
+    body: '''
+      🐇 ${1:✨} 🍇
+      	$0
+      🍉
+    '''
+  "Documentation Comment (Alt.)":
+    prefix: "/**"
+    body: "🌮 $0 🌮"
+  "Documentation Comment":
+    prefix: "taco"
+    body: "🌮 $0 🌮"
+  "Line Comment":
+    prefix: "//"
+    body: "👴 "
+  "Separator Comment":
+    prefix: "sep"
+    body: "👴👴👴"
+".source.emojicode .meta.function":
+  "Conditional (If) Block":
+    prefix: "if"
+    body: '''
+      🍊 ${1:expr} 🍇
+      	$0
+      🍉
+    '''
+  "Else Block":
+    prefix: "else"
+    body: '''
+      🍓 🍇
+      	$0
+      🍉
+    '''
+  "Else If Block":
+    prefix: "elif"
+    body: '''
+      🍋 ${1:expr} 🍇
+      	$0
+      🍉
+    '''
+  Literal:
+    prefix: "lit"
+    body: "${1|⚡️,👍,👎,⏩,⏭,🔤,🔟|}$0${1/(🔤)|./(?1:🔤)/}"
+  "Return Statement":
+    prefix: "ret"
+    body: "🍎 ${1:value}"
+  "UUID (Bundle Dev)":
+    prefix: "uuid"
+    body: "$TM_DOCUMENT_UUID"
+  "Variable Assignment (Alt.)":
+    prefix: "var"
+    body: "🍮 ${1:name} ${2:value}"
+  "Variable Assignment":
+    prefix: "set"
+    body: "🍮 ${1:name} ${2:value}"
+  "Variable Freeze (Alt.)":
+    prefix: "let"
+    body: "🍦 ${1:name} ${2:value}"
+  "Variable Freeze":
+    prefix: "freeze"
+    body: "🍦 ${1:name} ${2:value}"
+".source.emojicode .meta.class":
+  "Initializer Definition":
+    prefix: "init"
+    body: '''
+      🐈 ${1:🆕} 🍇
+      	$0
+      🍉
+    '''
+  "Method Definition":
+    prefix: "method"
+    body: '''
+      🐖 ${1:🔡} ▶️ ${2|✨,🚂,🚀,🔣,🔡,⏩,🍨🐚,🍯🐚|} 🍇
+      	$0
+      🍉
+    '''
+  "Type Method Definition":
+    prefix: "typemethod"
+    body: '''
+      🐇🐖 ${1:🔡} ▶️ ${2|✨,🚂,🚀,🔣,🔡,⏩,🍨🐚,🍯🐚|} 🍇
+      	$0
+      🍉
+    '''
+".source.emojicode .meta.function.method, .source.emojicode .meta.function.initializer":
+  "Method Parameter":
+    prefix: "par"
+    body: "${1:name} ${2|🚂,🚀,🔣,🔡,⏩,🍨🐚,🍯🐚|}"
+".source.emojicode .meta.class, .source.emojicode .meta.function":
+  "Variable Declaration":
+    prefix: "decl"
+    body: "🍰 ${1:name} ${2|🚂,🚀,🔣,🔡,⏩,🍨🐚,🍯🐚|}"
