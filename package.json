@@ -1,8 +1,7 @@
 {
   "name": "language-emojicode",
   "description": "Emojicode language support for Atom",
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "Maxwell Walters <max.walters10@gmail.com> (https://github.com/warpaltarpers)",
   "repository": {
     "type": "git",
@@ -12,6 +11,6 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {},
+  "version": "0.1.0"
 }
