@@ -1,6 +1,14 @@
 # Emojicode language support in Atom
 
-[Can be found here](https://atom.io/packages/language-emojicode)
+Can be found at [apm](https://atom.io/packages/language-emojicode) and [npm](https://www.npmjs.com/package/language-emojicode)
+
+### Installing (npm)
+
+```
+npm i language-emojicode
+```
+
+### About
 
 Add syntax highlighting and snippets to Emojicode (.emojic) files in Atom.
 
