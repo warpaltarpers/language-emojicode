@@ -1,5 +1,7 @@
 # Emojicode language support in Atom
 
+![APM](https://img.shields.io/apm/dm/language-emojicode.svg?label=apm%20downloads)
+
 Can be found at [apm](https://atom.io/packages/language-emojicode) and [npm](https://www.npmjs.com/package/language-emojicode)
 
 ### Installing (npm)
