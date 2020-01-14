@@ -1,5 +1,5 @@
 {
-  "name": "language-emojicode",
+  "name": "@warpaltarpers/language-emojicode",
   "description": "Emojicode language support for Atom",
   "keywords": [],
   "author": "Maxwell Walters <max.walters10@gmail.com> (https://github.com/warpaltarpers)",
