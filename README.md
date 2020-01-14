@@ -2,7 +2,7 @@
 
 ![APM](https://img.shields.io/apm/dm/language-emojicode.svg?label=apm%20downloads) ![NPM](https://img.shields.io/npm/dm/language-emojicode?label=npm%20downloads)
 
-Can be found at [apm](https://atom.io/packages/language-emojicode), [npm](https://www.npmjs.com/package/language-emojicode), and GitHub Package Registry
+Can be found at [apm](https://atom.io/packages/language-emojicode), [npm](https://www.npmjs.com/package/language-emojicode), and [GitHub Package Registry](https://github.com/warpaltarpers/language-emojicode/packages/104007)
 
 ## Installing
 
