@@ -16,7 +16,7 @@ npm i language-emojicode
 apm install language-emojicode
 ```
 
-## GitHub Package Registry
+### GitHub Package Registry
 ```
 npm install @warpaltarpers/language-emojicode@1.0.0
 ```
